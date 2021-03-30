@@ -11,13 +11,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { IconsProviderModule } from './icons-provider.module';
-import { NzLayoutModule } from 'ng-zorro-antd/layout';
-import { NzMenuModule } from 'ng-zorro-antd/menu';
-import { NzFormModule } from 'ng-zorro-antd/form';
-import { NzInputModule } from 'ng-zorro-antd/input';
-import { NzButtonModule } from 'ng-zorro-antd/button';
 import { LoginComponent } from './login/login.component';
 import { IndexComponent } from './index/index.component';
+import { DemoNgZorroAntdModule } from './ng-zorro-antd.module';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 registerLocaleData(en);
 
@@ -25,9 +22,11 @@ registerLocaleData(en);
   declarations: [
     AppComponent,
     LoginComponent,
-    IndexComponent
+    IndexComponent,
+    DashboardComponent
   ],
   imports: [
+    DemoNgZorroAntdModule,
     ReactiveFormsModule,
     BrowserModule,
     FormsModule,
@@ -35,11 +34,6 @@ registerLocaleData(en);
     BrowserAnimationsModule,
     AppRoutingModule,
     IconsProviderModule,
-    NzLayoutModule,
-    NzMenuModule,
-    NzFormModule,
-    NzInputModule,
-    NzButtonModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
